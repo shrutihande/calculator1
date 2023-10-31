@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+
+	<style type="text/css">
+.bd{
+	background-image: url('https://media1.giphy.com/media/MSCxcPerWykHyR11EB/giphy.webp?cid=ecf05e47n49h062p8j8da7kdjsg6nqqc4lw2lvfk6klu4wie&ep=v1_stickers_search&rid=giphy.webp&ct=s');
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+
+
+
+		.calc{
+			background-color: transparent ;
+			height: 370px;
+			width:250px;
+			margin: 10% 30%;
+			border-radius: 35px;
+			padding: 20px;
+			box-shadow: 20px 20px 70px grey;
+			border: 5px solid grey;
+
+
+		}
+		input{
+			color: white;
+			font-size: 15px ;
+			width: 50px;
+			height: 50px;
+			background-color: black;
+			
+			
+			border-radius: 10px;
+			margin: 4px;
+			font-weight: bolder 
+			transition-duration: 0.5s;
+		}
+
+		.opr{
+			background-color:red;
+			
+
+		}
+		
+		.ac{
+			width: 110px;
+			margin-right: 5px;
+		}
+		.op{
+			height: 70px;
+			width: 230px;
+			background-color: grey;
+			
+			box-shadow: 0px 0px 3px black ;
+			text-align: right;
+			font-size: 20px;
+
+
+		}
+
+		#allclear{
+			background-color: royalblue;
+			
+
+		}
+		#allclear:hover{
+			box-shadow: 5px 5px 5px 5px red;
+			color: black;
+
+		}
+		.opr:hover{
+			transform: scale(0.9);
+			
+                }
+		input[type="button"]:hover{
+			transform: scale(0.9);
+			box-shadow: 5px 5px 5px 5px red;
+			color: grey;
+		}
+		#opr1:hover
+		{
+			box-shadow: 5px 5px 10px  grey;
+
+		}
+		
+	</style>
+</head>
+<body bgcolor="black" class="bd">
+
+	<div class="calc" align="center">
+	
+		<form>
+			<div>
+				<input type="text" name="op"  class="op" disabled>
+			</div>
+			<div>
+				<input type="button" value="AC" onclick="op.value=''" class="ac" id="allclear">
+				<input type="button" value="C" onclick="op.value=clr(op.value)" class="opr" id="opr1" >
+				<input type="button" value="%" onclick="op.value+='%'" class="opr" id="opr1">
+				
+				
+
+			</div>
+			<div>
+				<input type="button" value="7" onclick="op.value+='7'" >
+				<input type="button" value="8" onclick="op.value+='8'">
+				<input type="button" value="9" onclick="op.value+='9'" >
+				<input type="button" value="+" onclick="op.value+='+'" class="opr" id="opr1">
+
+				</div>
+				<div>
+				<input type="button" value="4" onclick="op.value+='4'" >
+				<input type="button" value="5" onclick="op.value+='5'">
+				<input type="button" value="6" onclick="op.value+='6'" >
+				<input type="button" value="-" onclick="op.value+='-'" class="opr" id="opr1">
+
+				</div>
+			<div>
+				<input type="button" value="1" onclick="op.value+='1'" >
+				<input type="button" value="2" onclick="op.value+='2'">
+				<input type="button" value="3" onclick="op.value+='3'" >
+				<input type="button" value="x" onclick="op.value+='*'" class="opr" id="opr1">
+
+				</div>
+			<div>
+				<input type="button" value="." onclick="op.value+='.'" >
+				<input type="button" value="0" onclick="op.value+='0'">
+				<input type="button" value="=" onclick="op.value=eval(op.value)" >
+				<input type="button" value="/" onclick="op.value+='/'" class="opr" id="opr1">
+
+				</div>
+			
+			
+		</form>
+	</div>
+
+	
+	<script type="text/javascript">
+		let op=getElementByClass('op');
+		function clr(op)
+		{
+
+			let m=op.split('')
+			m.pop();
+			let c=m.join('');
+			return c;
+		}
+
+		
+	</script>
+
+</body>
+</html>
